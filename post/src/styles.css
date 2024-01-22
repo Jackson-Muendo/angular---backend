@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    text-align: center;
+}
+.btn{
+    border: 0px;
+    background-color: aliceblue;
+    color: red;
+    
+}
+.menu{
+    background-color: black;
+    height: 3px;
+    width: 15px;
+    margin:2px;
+}
+header{
+    height:70px ;
+    max-width: 100%;
+    text-align: center;
+    background-color: aliceblue;
+}
+input,textarea{
+    width: 70%;
+    
+    background-color: white;
+}
+input,button{
+    height: 25px;
+}
+button{
+    width: 150px;
+}
+.dis{
+    width: 45%;
+    text-align: center;
+    margin:auto;
+}
+P{
+    border: 1px solid green;
+    background-color: aliceblue;
+    
+    
+}
+a{
+    margin-right: 20px;
+}
+input[type='file']{  
+    visibility: hidden;  
+  }  
+  .parag{
+    background-color: white;
+    border:0px;
+  }
+  .image-preview{  
+    height: 100px;  
+    margin: 1rem 0;  
+  }  
+    
+  .image-preview img{  
+    height: 100px;  
+  }  
+  .form{
+    border: 2px solid black;
+    width: 30%;
+    box-sizing:initial;
+    margin: auto;
+    background-color: aliceblue;
+    
+    
+  }
+ 

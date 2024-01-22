@@ -1,0 +1,18 @@
+<header><br>
+    <div>
+    <button style="background-color: aliceblue;border:0px;float:left;">
+    <div class="menu"></div>
+    <div class="menu"></div>
+    <div class="menu"></div>
+    </button>
+    <div *ngIf = "userIsAuthenticated">
+    <a routerLink="/create">Create Post</a>
+    <a routerLink="/post-list">post list</a>
+    <a ><button style="background-color: aliceblue;border:0px;" (click)="onlogout()">Logout</button></a>
+    </div>
+    <div *ngIf = "!userIsAuthenticated">
+    <a routerLink="/">Login</a>
+    <a routerLink="/signup">Sign Up</a> </div>
+    
+    </div>
+</header>

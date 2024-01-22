@@ -1,0 +1,25 @@
+<div *ngIf="isLoading">
+    <p class="parag">Loading...</p>
+</div>
+<div *ngIf="!isLoading">
+<div class="form-group">
+    <h2>CREATE YOUR POSTS</h2>
+    <form [formGroup]="form" (submit)="addpost()" >
+    <label for="title">Title</label><br>
+    <input type="text" formControlName="title" ><br>
+   
+    <div style="color: red;background-color:white;" *ngIf="form.get('title').touched && form.get('title').invalid">Title is required</div>
+    <br>
+    <button type="button" (click)="filepicker.click()" style="margin-left:12%;background-color:white;">Pick Image</button>
+    <input type="file" #filepicker (change)="pickedimage($event)"> <br>
+    <div class="image-preview" *ngIf = "Pickedimage !== '' && Pickedimage && form.get('image').valid">
+        <img [src]="Pickedimage" [alt]="form.value.title">
+    </div>
+    <label for="content">Content</label><br>
+    <textarea rows="6" cols="50" formControlName="content"   ></textarea> <br>
+    <div style="color: red;background-color:white;" *ngIf="form.get('content').touched &&form.get('content').invalid">Content input is required</div>
+    <a><button type="submit">create post</button> </a>
+    <a><button type="submit" routerLink="/post-list">view post</button></a>
+    </form>
+</div> 
+</div>
