@@ -18,7 +18,7 @@ getpost(_id:string){
 addposts(title:string,content:string){
 const post = {title:title,content:content,date:Date.now()}
 //post.append('ímage',image,title)
-this.http.post<{message:string,post}>('http://localhost:8080/api/posts',post)
+this.http.post<{message:string,post}>('https://learning-app-lrpl.onrender.com/api/posts',post)
 .subscribe((responseData)=>{
     console.log(responseData.message);
     this.posts.push(post);
@@ -34,7 +34,7 @@ getpostupdatelistener(){
 
 updatepost(_id:string,title:string,content:string){
     const post = {_id:_id,title:title,content:content,date:Date.now()}
-    this.http.put<{message:string}>('http://localhost:8080/api/posts/'+_id,post)
+    this.http.put<{message:string}>('https://learning-app-lrpl.onrender.com/api/posts/'+_id,post)
     .subscribe((res)=>{
         const updatedposts = [...this.posts]
         const oldpostindex = updatedposts.findIndex(p=>p._id === _id)
@@ -47,7 +47,7 @@ updatepost(_id:string,title:string,content:string){
     })
 }
 getposts(){
-    this.http.get<{message:string,posts:any}>('http://localhost:8080/api/posts')
+    this.http.get<{message:string,posts:any}>('https://learning-app-lrpl.onrender.com/api/posts')
     .subscribe((postdata)=>{
         this.posts = postdata.posts;
         this.postudated.next([...this.posts]);
@@ -57,7 +57,7 @@ getposts(){
    
 }
 deletepost(postid:string){
-    this.http.delete('http://localhost:8080/api/posts/'+postid)
+    this.http.delete('https://learning-app-lrpl.onrender.com/api/posts/'+postid)
     .subscribe(()=>{ 
         console.log('deleted');
     })

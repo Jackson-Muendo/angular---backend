@@ -23,7 +23,7 @@ export class UserService {
     password:string,cpassword:string){
       const user = {firstname:firstname,lastname:lastname,email:email,
         password:password,cpassword:cpassword}
-        this.http.post<{message:string}>('http://localhost:8080/api/user/signup',user)
+        this.http.post<{message:string}>('https://learning-app-lrpl.onrender.com/api/user/signup',user)
         .subscribe((responseData)=>{
           
           this.users.push(user);
@@ -104,7 +104,7 @@ export class UserService {
   }
   loginuser(email: string,password: string){
       const user = {email:email, password:password}
-      this.http.post<{token:string,expiresIn:number,userid:string}>('http://localhost:8080/api/user/login',user)
+      this.http.post<{token:string,expiresIn:number,userid:string}>('https://learning-app-lrpl.onrender.com/api/user/login',user)
       .subscribe((responseData)=>{
         const token = responseData.token
         this.token = token;
