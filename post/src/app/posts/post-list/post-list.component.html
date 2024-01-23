@@ -9,7 +9,7 @@
 <div *ngIf=" posts.length>0">
 <button style="width:150px;color:green;" type="submit" routerLink="/create">add more posts</button><br><br>
 <div *ngFor="let x of posts;let i=index;">
- <p class="dis">{{i+1}}. <b>Title: {{x.title | titlecase}}</b><br> <br>{{x.content}} <br><br><div style="text-align: end;font-size:smaller;">{{ x.date |date:'short'}}</div><br>{{x.creator}}<br> <br><div *ngIf="userid == x.creator"><button type="submit" class="btn" (click)="delete(x._id)">DELETE</button><button type="submit" style="color: green; border:0px;background-color:aliceblue;" [routerLink]="['/edit',x._id]">EDIT</button></div> </p><br>
+ <p class="dis">{{i+1}}. <b>Title: {{x.title | titlecase}}</b><br> <br>{{x.content}} <br><br><div style="text-align: end;font-size:smaller;">{{ x.date |date:'short'}}</div><br><div style="text-align:end;">{{x.creator}}</div><br> <br><div *ngIf="userid == x.creator"><button type="submit" class="btn" (click)="delete(x._id)">DELETE</button><button type="submit" style="color: green; border:0px;background-color:aliceblue;" [routerLink]="['/edit',x._id]">EDIT</button></div> </p><br>
 </div>
 
 </div>
