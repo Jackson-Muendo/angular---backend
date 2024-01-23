@@ -32,7 +32,7 @@ button{
     width: 150px;
 }
 .dis{
-    width: 45%;
+    width: 75%;
     text-align: center;
     margin:auto;
 }
@@ -62,7 +62,7 @@ input[type='file']{
   }  
   .form{
     border: 2px solid black;
-    width: 30%;
+    width: 60%;
     box-sizing:initial;
     margin: auto;
     background-color: aliceblue;
